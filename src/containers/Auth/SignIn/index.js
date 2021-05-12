@@ -6,21 +6,21 @@ import AuthButton from '../../../components/AuthButton';
 import {scale} from '../../../../theme/ScaleSheet';
 
 const Sign = props => {
-  const [email, useEmail] = useState('');
-  const [password, usePassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
     <ViewBackground style={styles.container}>
       <InputText
         secureTextEntry={false}
         title="Email"
         value={email}
-        onChangeText={useEmail}
+        onChangeText={setEmail}
       />
       <InputText
         secureTextEntry={true}
         title="Password"
         value={password}
-        onChangeText={usePassword}
+        onChangeText={setPassword}
       />
       <AuthButton
         containerStyle={{
