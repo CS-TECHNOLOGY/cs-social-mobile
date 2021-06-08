@@ -46,7 +46,7 @@ export class TextInputAnother extends Component {
       }),
       color: this._animatedIsFocused.interpolate({
         inputRange: [0, 1],
-        outputRange: [colors.sand, colors.brown],
+        outputRange: [colors.sand, colors.white],
       }),
     };
     return (
