@@ -1,20 +1,32 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React, {useState} from 'react';
+import {Text, View} from 'react-native';
+import images from './src/assets/images';
+import ButtonAnother from './src/components/ButtonAnother';
+import TextInputAnother from './src/components/TextInputAnother';
+import ToolBar from './src/components/ToolBar';
+import colors from './src/utils/colors/colors';
 
-import React from 'react';
-import {View} from 'react-native';
-import Sign from './src/containers/Auth/SignIn';
-const App = () => {
+export const App = () => {
+  const [email, setEmail] = useState('');
   return (
     <View>
-      <Sign />
+      <ToolBar
+        title={'Xin chào'}
+        // search
+        iconLeft={images.icongoBack}
+        leftPress={() => this.props.navigation.goBack()}
+      />
+      <View style={{paddingHorizontal: 20}}>
+        <TextInputAnother
+          maxLength={34}
+          iconImg={images.icongoBack}
+          label="Email đăng nhập "
+          value={email}
+          onChangeText={text => setEmail(text)}
+          pass
+        />
+        <ButtonAnother text="Hello" containerStyle={{}} />
+      </View>
     </View>
   );
 };
-
-export default App;
