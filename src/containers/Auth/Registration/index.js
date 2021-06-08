@@ -14,7 +14,7 @@ import colors from '../../../utils/colors/colors';
 import {scale} from '../../../utils/scaling/scaling';
 import vari from '../../../utils/vari/vari';
 
-export const Registration = () => {
+const Registration = ({navigation}) => {
   return (
     <ViewBackground style={styles.container}>
       <ScrollView
@@ -23,7 +23,9 @@ export const Registration = () => {
           paddingVertical: 20,
         }}
         showsVerticalScrollIndicator={false}>
-        <TouchableOpacity style={styles.touch}>
+        <TouchableOpacity
+          style={styles.touch}
+          onPress={() => navigation.goBack()}>
           <Image
             source={images.icongoBack}
             style={styles.touch}
@@ -53,6 +55,7 @@ export const Registration = () => {
     </ViewBackground>
   );
 };
+export default Registration;
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: vari.width / 12,

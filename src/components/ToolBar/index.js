@@ -39,7 +39,7 @@ export const ToolbarImgRight = props => {
     </TouchableOpacity>
   );
 };
-export class ToolBar extends Component {
+class ToolBar extends Component {
   leftPress = () => {
     if (this.props.leftPress) {
       this.props.leftPress();
@@ -62,8 +62,7 @@ export class ToolBar extends Component {
           )}
         </View>
         {this.props.title && (
-          <View
-            style={styles.title}>
+          <View style={styles.title}>
             <Text
               style={{textAlign: 'center', fontSize: 15, color: 'white'}}
               numberOfLines={1}>
@@ -153,10 +152,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     flex: 1,
   },
-  title:{
+  title: {
     height: scale(50),
     width: '70%',
     justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
 });
