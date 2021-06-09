@@ -41,4 +41,8 @@ export default {
   trans: 'transparent',
   sand: '#fa8072',
   brown: '#f4a460',
+  carot: '#ff7f50',
+  orange: '#ff8c00',
+  smoke: '#fffacd',
+  notwhite: '#ffe4c4',
 };
