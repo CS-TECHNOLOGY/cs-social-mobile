@@ -3,11 +3,12 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import SignIn from '../containers/Auth/SignIn';
 import Registration from '../containers/Auth/Registration';
-import ProfileScreen from '../containers/screens/Profile';
 import colors from '../utils/colors/colors';
 import ChatScreen from '../containers/screens/ChatScreen';
 import ListFriend from '../containers/screens/ListFriend';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Profile from '../containers/screens/Profile';
+import MyProfile from '../containers/screens/MyProfile';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 function MyTabs() {
@@ -30,13 +31,6 @@ function MyTabs() {
         component={ChatScreen}
         options={{
           tabBarLabel: 'ChatScreen',
-          // tabBarIcon: () => (
-          //   <Image
-          //     style={{width: scale(27), height: scale(27)}}
-          //     resizeMode="contain"
-          //     source={asset.HomeTab}
-          //   />
-          // ),
           tabBarIcon: ({color}) => (
             <MaterialCommunityIcons name="chat" color={color} size={25} />
           ),
@@ -57,8 +51,8 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="ProfileScreen"
-        component={ProfileScreen}
+        name="MyProfile"
+        component={MyProfile}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({color}) => (
@@ -75,6 +69,7 @@ const Router = () => {
       <Stack.Screen name="SignIn" component={SignIn} />
       <Stack.Screen name="Registration" component={Registration} />
       <Stack.Screen name="MyTabs" component={MyTabs} />
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );
 };

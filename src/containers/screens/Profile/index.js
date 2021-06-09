@@ -5,30 +5,27 @@ import Tel from './Tel';
 import Email from './Email';
 import images from '../../../assets/images';
 import Header from './Header';
-
-const ProfileScreen = () => {
-  const renderHeader = () => (
+const Profile = ({route, navigation}) => {
+  const renderHeader = item => (
     <Header
-      name="Đặng Anh Sơn"
+      name={item.name}
       img={images.coco}
-      city="Hà Nội"
-      country="Việt Nam"
+      city={item.city}
+      country={item.country}
       background={images.background}
+      onPress={() => navigation.goBack()}
     />
   );
-  const renderTel = () => (
-    <Tel key={`tel-${1}`} name="Đặng Anh Sơn" number="0387140336" />
-  );
-  const renderEmail = () => (
-    <Email key={`email-${1}`} name="Đặng Anh Sơn" email="maxseo9x@gmail.com" />
-  );
+  const renderTel = item => <Tel name={item.name} number={item.phone} />;
+  const renderEmail = item => <Email name={item.name} email={item.email} />;
+
   return (
     <ScrollView style={styles.scroll}>
       <View style={styles.container}>
         <Card containerStyle={styles.cardContainer}>
-          {renderHeader()}
-          {renderTel()}
-          {renderEmail()}
+          {renderHeader(route.params.item)}
+          {renderTel(route.params.item)}
+          {renderEmail(route.params.item)}
           <Card.Divider />
           <Rating type="heart" ratingCount={10} imageSize={30} showRating />
         </Card>
@@ -36,7 +33,7 @@ const ProfileScreen = () => {
     </ScrollView>
   );
 };
-export default ProfileScreen;
+export default Profile;
 const styles = StyleSheet.create({
   cardContainer: {
     backgroundColor: '#FFF',

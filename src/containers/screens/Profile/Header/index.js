@@ -1,14 +1,29 @@
 import React from 'react';
-import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {Icon} from 'react-native-elements';
-
-const Header = ({img, name, city, country, background}) => {
+import images from '../../../../assets/images';
+const Header = ({img, name, city, country, background, onPress}) => {
   return (
     <View style={styles.headerContainer}>
       <ImageBackground
         style={styles.headerBackgroundImage}
         blurRadius={10}
         source={background}>
+        <TouchableOpacity style={styles.touch} onPress={onPress}>
+          <Image
+            source={images.icongoBack}
+            style={styles.img}
+            resizeMode="center"
+          />
+        </TouchableOpacity>
+
         <View style={styles.headerColumn}>
           <Image style={styles.userImage} source={img} />
           <Text style={styles.userNameText}>{name}</Text>
@@ -51,7 +66,7 @@ const styles = StyleSheet.create({
   },
   headerBackgroundImage: {
     paddingBottom: 20,
-    paddingTop: 45,
+    paddingTop: 20,
   },
   headerContainer: {
     marginBottom: 20,
@@ -108,5 +123,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     paddingBottom: 8,
     textAlign: 'center',
+  },
+  touch: {marginLeft: 20, width: 30, height: 30},
+  img: {
+    width: 30,
+    height: 30,
   },
 });
