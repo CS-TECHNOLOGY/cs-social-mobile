@@ -7,4 +7,6 @@ export default {
   iconPass: require('./icons/iconPass.png'),
   iconPhone: require('./icons/iconPhone.png'),
   iconPersion: require('./icons/iconPersion.png'),
+  background: require('./icons/background.png'),
+  coco: require('./icons/coco.jpg'),
 };
