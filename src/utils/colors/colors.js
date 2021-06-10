@@ -23,7 +23,7 @@ export default {
   blue3: '#0cacea',
   blue4: '#0084f0',
   grey: 'rgb(145, 149, 170)',
-  grey1: 'rgb(215 ,215 , 215)',
+  grey1: 'rgb(215, 215, 215)',
   grey2: '#ADADAE',
   grey2_48: 'rgba(125,125,125,0.48)',
   grey3: '#D6D6D6',
