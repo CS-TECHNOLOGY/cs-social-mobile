@@ -9,6 +9,7 @@ import ListFriend from '../containers/screens/ListFriend';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Profile from '../containers/screens/Profile';
 import MyProfile from '../containers/screens/MyProfile';
+import {NewFeed} from '../containers/screens/NewFeed';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 function MyTabs() {
@@ -33,6 +34,16 @@ function MyTabs() {
           tabBarLabel: 'ChatScreen',
           tabBarIcon: ({color}) => (
             <MaterialCommunityIcons name="chat" color={color} size={25} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="NewFeed"
+        component={NewFeed}
+        options={{
+          tabBarLabel: 'NewFeed',
+          tabBarIcon: ({color}) => (
+            <MaterialCommunityIcons name="newspaper" color={color} size={25} />
           ),
         }}
       />
