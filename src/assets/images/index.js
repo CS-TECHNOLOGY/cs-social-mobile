@@ -9,4 +9,7 @@ export default {
   iconPersion: require('./icons/iconPersion.png'),
   background: require('./icons/background.png'),
   coco: require('./icons/coco.jpg'),
+  done: require('./icons/done.png'),
+  date: require('./icons/date.png'),
+  king: require('./icons/king.png'),
 };

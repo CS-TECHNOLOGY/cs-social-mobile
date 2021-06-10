@@ -11,7 +11,7 @@ export class ItemInfor extends Component {
     return (
       <View
         style={{
-          paddingHorizontal: scale(20),
+          paddingHorizontal: 20,
           height: scale(60),
           borderBottomWidth: 1,
           borderBottomColor: '#EDEEF0',
@@ -44,7 +44,7 @@ export class ItemInfor extends Component {
           {txtInput && (
             <TextInput
               {...this.props}
-              placeholderTextColor={colors.sand}
+              placeholderTextColor={colors.gray2}
               selectionColor={colors.sand}
               placeholder={placeholder}
               style={{

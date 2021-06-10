@@ -1,3 +1,5 @@
+import Toast from "react-native-toast-message";
+
 export const showToast = (type, text1, text2, position) => {
   switch (type) {
     case 'success':
